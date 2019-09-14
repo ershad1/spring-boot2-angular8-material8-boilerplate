@@ -79,4 +79,4 @@ First of all you need to configure the database. Properties are located in `./ba
 
 
 ## License
-spring-boot-angular4-boilerplate is released under the [MIT License](https://opensource.org/licenses/MIT).
+spring-boot2-angular8-material8-boilerplate is released under the [MIT License](https://opensource.org/licenses/MIT).
