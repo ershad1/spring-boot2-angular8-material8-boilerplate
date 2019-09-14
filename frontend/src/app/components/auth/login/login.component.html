@@ -1,0 +1,13 @@
+<mat-card fxFlex.gt-xs="50%" fxFlex.lt-md="100%" fxLayout="column" fxLayoutAlign="center center">
+  <img src="assets/images/Angular-boot.png" width="150">
+  <mat-label>Only admin user can create employee</mat-label>
+  <form (submit)="login($event, username.value, password.value)" role="form">
+    <mat-form-field style="width: 100%;">
+      <input #username matInput placeholder="Username: admin/user">
+    </mat-form-field>
+    <mat-form-field style="width: 100%;">
+      <input #password matInput placeholder="Password: test" type="password">
+    </mat-form-field>
+    <button mat-button style="width: 100%;" type="submit">Submit</button>
+  </form>
+</mat-card>

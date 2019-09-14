@@ -1,0 +1,11 @@
+<br/><br/>
+<button *ngxPermissionsOnly="['ADMIN', 'USER']" mat-button routerLink="search">Search</button>
+<button *ngxPermissionsOnly="['ADMIN']" mat-button routerLink="create">Create</button>
+<button *ngxPermissionsOnly="['ADMIN']" mat-button routerLink="edit">Edit</button>
+<br/><br/>
+
+<div *ngxPermissionsOnly="['ADMIN']">
+  <b>This is shown if you are an administrator.</b>
+</div>
+
+<router-outlet></router-outlet>

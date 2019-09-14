@@ -1,0 +1,40 @@
+<div class="container">
+  <mat-sidenav-container>
+    <mat-toolbar color="primary">
+      <div style="width: 100%; display: flex; justify-content: space-between;">
+        <a (click)="sidenav.open()" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </a>
+        <a style="float: right;">
+          {{ userInfo?.name }}
+        </a>
+      </div>
+    </mat-toolbar>
+
+    <mat-sidenav #sidenav>
+      <mat-toolbar>
+        <img src="assets/images/Angular-boot.png" width="60"/>
+        <h3>AngularSpringBoilerplate</h3>
+      </mat-toolbar>
+
+      <mat-nav-list>
+        <h3 mat-subheader>Actions 1</h3>
+        <a (click)="sidenav.close()" [routerLink]="['/customers']" mat-list-item>Customers</a>
+        <a (click)="sidenav.close()" [routerLink]="['/employees']" mat-list-item>Employees</a>
+        <a (click)="sidenav.close()" href="javascript:void(0)" mat-list-item>Link 2</a>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Actions 2</h3>
+        <a (click)="logout()" mat-list-item>Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <div>
+      <mat-toolbar>
+        <mat-icon>{{templateValues[0]}}</mat-icon>
+        <h3 style="margin-left: 10px;">{{templateValues[1]}}</h3>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-container>
+</div>

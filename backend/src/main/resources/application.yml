@@ -1,0 +1,38 @@
+server:
+  port: 5000
+spring:
+  datasource:
+    #   MariaDB
+    url: jdbc:mysql://localhost:3306/backend_service?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    #   &allowPublicKeyRetrieval=true&useSSL=true
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root
+    password:
+  #   MySQL
+  #   url: jdbc:mariadb://localhost:3306/backend_service
+  #   driverClassName: com.mysql.cj.jdbc.Driver
+  #   username: root
+  #   password:
+  #   PostgresSQL
+  #   url: jdbc:postgresql://localhost:5432/backend_service
+  #   driverClassName: org.postgresql.Driver
+  #   username: postgres
+  #   password: 1234
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+  #      naming.implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+  #      naming.physical-strategy: com.app.util.RcNamingStrategy
+
+
+  data:
+    rest:
+      basePath: /api
+# JWT Auth
+auth:
+#https://www.grc.com/passwords.htm
+  secret: some-random-secret
+  expires: 604800
+  header: Authorization
+

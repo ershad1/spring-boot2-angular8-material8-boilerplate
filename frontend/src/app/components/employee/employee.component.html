@@ -1,0 +1,11 @@
+<div class="container">
+  <nav mat-tab-nav-bar>
+    <a #rla="routerLinkActive"
+       *ngFor="let link of navLinks"
+       [active]="rla.isActive"
+       [disabled]="link.disabled" [routerLink]="link.path" mat-tab-link routerLinkActive>
+      {{link.label}}
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
