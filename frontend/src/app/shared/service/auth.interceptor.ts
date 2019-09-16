@@ -7,18 +7,19 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthInterceptor implements HttpInterceptor {
-
   constructor(private localSt: LocalStorageService) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let userInfo = this.localSt.retrieve('user');
     let authReq;
-
-    authReq = req.clone({
-      headers: req.headers.set('Authorization', `${userInfo.token}`)
-    });
-
-    return next.handle(authReq);
+    if (userInfo) {
+      authReq = req.clone({
+        headers: req.headers.set('Authorization', `${userInfo.token}`)
+      });
+      return next.handle(authReq);
+    } else {
+      return next.handle(req);
+    }
   }
 }
